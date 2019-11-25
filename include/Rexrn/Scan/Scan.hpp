@@ -7,13 +7,13 @@
 namespace rexrn_scan
 {
 
-struct result
+struct scan_result
 {
 	std::size_t progress;
 	std::size_t required;
 };
 
-struct fmt_element
+struct scan_fmt_element
 {
 	enum type {
 		integer,
@@ -31,7 +31,7 @@ namespace details
 {
 
 template <typename TInputIt>
-std::vector<fmt_element> parse_fmt_elements(TInputIt fmt_beg, TInputIt fmt_end)
+std::vector<scan_fmt_element> parse_fmt_elements(TInputIt fmt_beg, TInputIt fmt_end)
 {
 	// TODO: implement this.
 	return {};
@@ -41,7 +41,7 @@ std::vector<fmt_element> parse_fmt_elements(TInputIt fmt_beg, TInputIt fmt_end)
 
 
 template <typename TInputIt>
-result scan(
+scan_result scan(
 	TInputIt srcBeg_, TInputIt srcEnd_,
 	TInputIt fmtBeg_, TInputIt fmtEnd_)
 {
